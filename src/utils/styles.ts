@@ -5,8 +5,8 @@ const { width, height } = Dimensions.get('window');
 const screenWidth = width;
 const screenHeight = height;
 
-const guidelineBaseWidth = 768;
-const guidelineBaseHeight = 1024;
+const guidelineBaseWidth = 360;
+const guidelineBaseHeight = 800;
 
 const horizontalScale = (size: number): number =>
   Math.ceil((screenWidth / guidelineBaseWidth) * size);

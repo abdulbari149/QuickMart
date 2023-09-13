@@ -7,30 +7,43 @@
 
 import React from 'react';
 
-import { SafeAreaView, Text, View } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
-import LocalesProvider, { useTranslation } from 'context/locales';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+import { Platform, StatusBar, StyleSheet } from 'react-native';
+
+import LocalesProvider from 'context/locales';
 import useCurrentLocale from 'hooks/use-current-locale';
+import Navigation from 'navigation';
 
-const Main = () => {
-  const { t } = useTranslation('global');
-  return (
-    <View>
-      <Text>Hello from {t('appName')}</Text>
-    </View>
-  );
-};
+import { Colors } from 'styles';
 
 const App: React.FC = () => {
   const { selectedLocale } = useCurrentLocale();
 
+  const rootStyles = Platform.OS === 'android' ? styles.android : styles.ios;
+
   return (
-    <SafeAreaView>
-      <LocalesProvider defaultLocale="en" locale={selectedLocale}>
-        <Main />
-      </LocalesProvider>
-    </SafeAreaView>
+    <GestureHandlerRootView style={rootStyles}>
+      <StatusBar backgroundColor={Colors.white} barStyle="dark-content" />
+      <SafeAreaProvider>
+        <LocalesProvider defaultLocale="en" locale={selectedLocale}>
+          <Navigation />
+        </LocalesProvider>
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   );
 };
+
+const styles = StyleSheet.create({
+  android: {
+    flex: 1,
+  },
+  ios: {
+    flex: 1,
+    marginTop: 18,
+  },
+});
 
 export default App;
