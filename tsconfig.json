@@ -1,0 +1,33 @@
+{
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react-native",
+    "lib": ["es2018"],
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "module": "esNext",
+    "target": "esnext",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["src/*", "*"],
+      "icons/*": ["./src/assets/images/*", "./src/assets/icons/*.svg"]
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./@types",
+      "./node_modules/@tsconfig/react-native"
+    ],
+    "types": ["react-native"],
+    "sourceMap": true,
+    "inlineSources": true,
+    "sourceRoot": "/"
+  }
+}

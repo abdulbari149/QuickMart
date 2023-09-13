@@ -1,0 +1,12 @@
+node_modules/
+.eslintrc*
+ios/
+android/
+vendor/
+.vscode/
+.husky/
+.prettier*
+.watchmanconfig
+Gemfile
+Gemfile.lock
+*.json
