@@ -18,6 +18,7 @@ import useCurrentLocale from 'hooks/use-current-locale';
 import Navigation from 'navigation';
 
 import { Colors } from 'styles';
+import ThemeProvider from 'context/theme';
 
 const App: React.FC = () => {
   const { selectedLocale } = useCurrentLocale();
@@ -26,11 +27,13 @@ const App: React.FC = () => {
 
   return (
     <GestureHandlerRootView style={rootStyles}>
-      <StatusBar backgroundColor={Colors.white} barStyle="dark-content" />
+      <StatusBar backgroundColor={Colors.light.white} barStyle="dark-content" />
       <SafeAreaProvider>
-        <LocalesProvider defaultLocale="en" locale={selectedLocale}>
-          <Navigation />
-        </LocalesProvider>
+        <ThemeProvider>
+          <LocalesProvider defaultLocale="en" locale={selectedLocale}>
+            <Navigation />
+          </LocalesProvider>
+        </ThemeProvider>
       </SafeAreaProvider>
     </GestureHandlerRootView>
   );

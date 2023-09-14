@@ -1,5 +1,5 @@
 {
-  "include": ["./src", "index.js", "./__tests__", "*.d.ts", "storybook"],
+  "include": ["./src", "index.js", "./__tests__", "*.d.ts", "storybook", "src/types"],
   "exclude": [
     "./*.json",
     "android",

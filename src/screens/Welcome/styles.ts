@@ -1,19 +1,14 @@
-import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
 
-import { Colors, Layouts } from 'styles';
-import { moderateScale } from 'utils/styles';
+export const Container = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  background-color: ${(props) => props.theme.colors.grey50};
+`;
 
-const styles = StyleSheet.create({
-  container: {
-    ...Layouts.container,
-    ...Layouts.centered,
-    backgroundColor: Colors.white,
-  },
-  text: {
-    fontSize: moderateScale(25),
-    color: Colors.black,
-    fontWeight: 'bold',
-  },
-});
-
-export default styles;
+export const AppText = styled.Text`
+  font-size: 18px;
+  color: ${(props) => props.theme.colors.black};
+  font-weight: bold;
+`;

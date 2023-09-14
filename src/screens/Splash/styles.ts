@@ -1,16 +1,14 @@
-import { StyleSheet } from 'react-native';
+import { styled } from 'styled-components/native';
 
-import { Colors, Dimensions, Layouts } from 'styles';
+import { Dimensions } from 'styles';
 
-const styles = StyleSheet.create({
-  container: {
-    ...Layouts.container,
-    ...Layouts.centered,
-    backgroundColor: Colors.white,
-  },
-  logo: {
-    width: Dimensions.width.size75,
-  },
-});
+export const Container = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  background-color: ${(props) => props.theme.colors.white};
+`;
 
-export default styles;
+export const SplashLogo = styled.Image`
+  width: ${Dimensions.width.size75}px;
+`;

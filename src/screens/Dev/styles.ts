@@ -11,18 +11,18 @@ const styles = StyleSheet.create({
   itemContainer: {
     ...Layouts.horizontalContainer,
     alignItems: 'center',
-    borderBottomColor: Colors.black,
+    borderBottomColor: Colors.dark.black,
     borderBottomWidth: 1,
     height: Dimensions.height.size7,
     justifyContent: 'space-between',
     paddingHorizontal: Spacing.horizontal.size24,
   },
   text: {
-    color: Colors.black,
+    color: Colors.dark.black,
   },
   title: {
     paddingVertical: Spacing.vertical.size12,
-    color: Colors.black,
+    color: Colors.dark.black,
     textAlign: 'center',
     fontSize: moderateScale(20),
   },

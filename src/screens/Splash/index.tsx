@@ -1,4 +1,3 @@
-import { View, Image } from 'react-native';
 import React, { useEffect } from 'react';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 
@@ -8,7 +7,7 @@ import { WELCOME, type SPLASH } from 'constants/screen-names';
 import assets from 'assets';
 import useBootstrapApp from 'hooks/use-bootstrap-app';
 
-import styles from './styles';
+import { Container, SplashLogo } from './styles';
 
 type SplashProps = NativeStackScreenProps<
   PublicNavigatorParamList,
@@ -28,14 +27,13 @@ const Splash: SplashScreen = ({ navigation }) => {
   }, [isAppReady]);
 
   return (
-    <View style={styles.container}>
-      <Image
+    <Container>
+      <SplashLogo
         source={assets.images.splashLogo}
         alt="Splash logo"
         resizeMode="contain"
-        style={styles.logo}
       />
-    </View>
+    </Container>
   );
 };
 

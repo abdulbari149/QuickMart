@@ -24,7 +24,8 @@
     "typeRoots": [
       "./node_modules/@types",
       "./@types",
-      "./node_modules/@tsconfig/react-native"
+      "./node_modules/@tsconfig/react-native",
+      "src/types"
     ],
     "types": ["react-native"],
     "sourceMap": true,
