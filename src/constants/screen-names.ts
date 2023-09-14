@@ -5,3 +5,4 @@ export const DEV_MENU = 'DevMenu';
 export const DEV_STORY_BOOK = 'DevStoryBook';
 
 export const SPLASH = 'Splash';
+export const WELCOME = 'Welcome';

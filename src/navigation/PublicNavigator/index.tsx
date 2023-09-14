@@ -2,11 +2,11 @@ import React from 'react';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { SPLASH } from 'constants/screen-names';
+import { SPLASH, WELCOME } from 'constants/screen-names';
 
 import type { PublicNavigatorParamList } from 'navigation/types';
 
-import { publicNavigatorRoutes } from './routes';
+import { Splash, Welcome } from 'screens';
 
 const Stack = createNativeStackNavigator<PublicNavigatorParamList>();
 
@@ -17,14 +17,8 @@ const PublicNavigator = () => (
       headerShown: false,
     }}
   >
-    {Object.entries(publicNavigatorRoutes).map(([key, options]) => (
-      <Stack.Screen
-        key={key}
-        name={key as keyof PublicNavigatorParamList}
-        component={options.component}
-        options={options?.options ?? {}}
-      />
-    ))}
+    <Stack.Screen name={SPLASH} component={Splash} key={SPLASH} />
+    <Stack.Screen name={WELCOME} component={Welcome} key={WELCOME} />
   </Stack.Navigator>
 );
 export default PublicNavigator;
