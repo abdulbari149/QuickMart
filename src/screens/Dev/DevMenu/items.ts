@@ -1,3 +1,4 @@
+import { DEV_STORY_BOOK } from 'constants/screen-names';
 import type { DevNavigatorParamList } from 'navigation/types';
 
 export interface DevMenuItem {
@@ -6,4 +7,9 @@ export interface DevMenuItem {
   name: keyof DevNavigatorParamList;
 }
 
-export const items: Array<DevMenuItem> = [];
+export const items: Array<DevMenuItem> = [
+  {
+    label: 'Story book',
+    name: DEV_STORY_BOOK,
+  },
+];

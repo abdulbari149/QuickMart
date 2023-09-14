@@ -18,6 +18,7 @@
     "baseUrl": ".",
     "paths": {
       "*": ["src/*", "*"],
+      "storybook/*": ["./storybook/*"],
       "icons/*": ["./src/assets/images/*", "./src/assets/icons/*.svg"]
     },
     "typeRoots": [
@@ -29,5 +30,14 @@
     "sourceMap": true,
     "inlineSources": true,
     "sourceRoot": "/"
-  }
+  },
+  "exclude": [
+    "android",
+    "ios",
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js",
+    "script"
+  ]
 }
