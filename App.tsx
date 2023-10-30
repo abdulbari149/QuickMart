@@ -18,26 +18,6 @@ import useCurrentLocale from 'hooks/use-current-locale';
 import Navigation from 'navigation';
 
 import { Colors } from 'styles';
-import ThemeProvider from 'context/theme';
-
-const App: React.FC = () => {
-  const { selectedLocale } = useCurrentLocale();
-
-  const rootStyles = Platform.OS === 'android' ? styles.android : styles.ios;
-
-  return (
-    <GestureHandlerRootView style={rootStyles}>
-      <StatusBar backgroundColor={Colors.light.white} barStyle="dark-content" />
-      <SafeAreaProvider>
-        <ThemeProvider>
-          <LocalesProvider defaultLocale="en" locale={selectedLocale}>
-            <Navigation />
-          </LocalesProvider>
-        </ThemeProvider>
-      </SafeAreaProvider>
-    </GestureHandlerRootView>
-  );
-};
 
 const styles = StyleSheet.create({
   android: {
@@ -48,5 +28,21 @@ const styles = StyleSheet.create({
     marginTop: 18,
   },
 });
+const App: React.FC = () => {
+  const { selectedLocale } = useCurrentLocale();
+
+  const rootStyles = Platform.OS === 'android' ? styles.android : styles.ios;
+
+  return (
+    <GestureHandlerRootView style={rootStyles}>
+      <StatusBar backgroundColor={Colors.white} barStyle="dark-content" />
+      <SafeAreaProvider>
+        <LocalesProvider defaultLocale="en" locale={selectedLocale}>
+          <Navigation />
+        </LocalesProvider>
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
+  );
+};
 
 export default App;
