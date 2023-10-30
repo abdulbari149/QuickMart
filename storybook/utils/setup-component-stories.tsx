@@ -17,8 +17,8 @@ const setupComponentStories = <T extends ComponentType>(
   config: ComponentConfig<T>,
 ): SetupComponentStoriesReturnType => {
   const playgroundProps = I18nManager.isRTL
-    ? { ...config.props.fr, ...config.props.ar }
-    : config.props.fr;
+    ? { ...config.props.en, ...config.props.ur }
+    : config.props.en;
 
   const playground = () => (
     <View
@@ -33,7 +33,7 @@ const setupComponentStories = <T extends ComponentType>(
     </View>
   );
 
-  const { arabicArgTypes, frenchArgTypes } = getComponentPropsVariants(config);
+  const { urduArgTypes, englishArgTypes } = getComponentPropsVariants(config);
 
   const variants = () => (
     <ScrollView>
@@ -44,10 +44,10 @@ const setupComponentStories = <T extends ComponentType>(
         }}
       >
         {I18nManager.isRTL
-          ? arabicArgTypes.map((props, i) => (
+          ? urduArgTypes.map((props, i) => (
               <config.component key={i} {...props} />
             ))
-          : frenchArgTypes.map((props, i) => (
+          : englishArgTypes.map((props, i) => (
               <config.component key={i} {...props} />
             ))}
       </View>

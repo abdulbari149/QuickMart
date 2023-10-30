@@ -11,8 +11,8 @@ export type ComponentType = React.JSXElementConstructor<any>;
 export type ComponentConfig<T extends ComponentType> = {
   component: ComponentType;
   props: {
-    ar?: Partial<ComponentProps<T>>;
-    fr: ComponentProps<T>;
+    ur?: Partial<ComponentProps<T>>;
+    en: ComponentProps<T>;
   };
   title: string;
   argTypes?: ComponentStoriesArgTypes<Partial<ComponentProps<T>>>;

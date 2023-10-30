@@ -2,19 +2,21 @@ import type { ComponentProps } from 'react';
 import type { InputType } from '@storybook/csf';
 import cartesian from 'cartesian';
 
+import type { SupportedLocales } from 'context/locales/types';
+
 import type { ComponentType, ComponentConfig } from './component-config';
 import { getComponentArgTypes } from './get-component-arg-types';
 
 const mapComponentArgTypesToPropsVariants = (
   args: Record<string, InputType>,
-  locale: 'ar' | 'fr',
+  locale: SupportedLocales,
 ) => {
   const options: Record<string, Array<string | number | boolean>> = {};
   Object.entries(args).forEach(([propName, config]) => {
     switch (config?.type || config?.control?.type) {
       case 'select':
         options[propName] =
-          locale === 'ar' && config?.control?.optionsAr
+          locale === 'ur' && config?.control?.optionsAr
             ? config?.control?.optionsAr
             : config?.control?.options;
         break;
@@ -34,17 +36,17 @@ const mapComponentArgTypesToPropsVariants = (
 };
 
 type GeneratePropsVariantsReturnType<T extends ComponentType> = {
-  arabicArgTypes: Array<ComponentProps<T>>;
-  frenchArgTypes: Array<ComponentProps<T>>;
+  urduArgTypes: Array<ComponentProps<T>>;
+  englishArgTypes: Array<ComponentProps<T>>;
 };
 
 const getComponentPropsVariants = <T extends ComponentType>(
   config: ComponentConfig<T>,
 ): GeneratePropsVariantsReturnType<T> => {
-  const { arabicArgTypes, frenchArgTypes } = getComponentArgTypes(config);
+  const { urduArgTypes, englishArgTypes } = getComponentArgTypes(config);
   return {
-    arabicArgTypes: mapComponentArgTypesToPropsVariants(arabicArgTypes, 'ar'),
-    frenchArgTypes: mapComponentArgTypesToPropsVariants(frenchArgTypes, 'fr'),
+    urduArgTypes: mapComponentArgTypesToPropsVariants(urduArgTypes, 'ur'),
+    englishArgTypes: mapComponentArgTypesToPropsVariants(englishArgTypes, 'en'),
   };
 };
 

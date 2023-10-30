@@ -7,10 +7,10 @@ import getComponentPropsVariants from './get-component-props-variants';
 const setupComponentSnapshotTests = <T extends ComponentType>(
   config: ComponentConfig<T>,
 ): void => {
-  const { frenchArgTypes } = getComponentPropsVariants(config);
+  const { englishArgTypes } = getComponentPropsVariants(config);
   describe(`Given - ${config.component.name} component`, () => {
-    if (frenchArgTypes?.[0])
-      frenchArgTypes.forEach((props) => {
+    if (englishArgTypes?.[0])
+      englishArgTypes.forEach((props) => {
         describe(`and props are: ${JSON.stringify(props)}`, () => {
           it('should render correctly and match snapshot', () => {
             const tree = renderer

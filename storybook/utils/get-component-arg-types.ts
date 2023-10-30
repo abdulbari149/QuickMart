@@ -44,28 +44,28 @@ const mapPropsToArgTypes = <T extends ComponentType>(
 };
 
 export type GenerateComponentArgTypesReturnTypes = {
-  arabicArgTypes: Record<string, InputType>;
-  frenchArgTypes: Record<string, InputType>;
+  urduArgTypes: Record<string, InputType>;
+  englishArgTypes: Record<string, InputType>;
 };
 
 export const getComponentArgTypes = <T extends ComponentType>(
   config: ComponentConfig<T>,
 ): GenerateComponentArgTypesReturnTypes => {
-  const frenchArgTypes = {
-    ...mapPropsToArgTypes(config.props.fr ?? {}),
+  const englishArgTypes = {
+    ...mapPropsToArgTypes(config.props.en ?? {}),
     ...config.argTypes,
   };
 
-  const arabicArgTypes = {
+  const urduArgTypes = {
     ...mapPropsToArgTypes({
-      ...(config.props.fr ?? {}),
-      ...(config.props.ar ?? {}),
+      ...(config.props.en ?? {}),
+      ...(config.props.ur ?? {}),
     }),
     ...config.argTypes,
   };
 
   return {
-    arabicArgTypes,
-    frenchArgTypes,
+    urduArgTypes,
+    englishArgTypes,
   };
 };
