@@ -24,4 +24,13 @@ const verticalScale = (size: number): number =>
 const moderateScale = (size: number, factor: number = 0.51): number =>
   Math.ceil(size + (horizontalScale(size) - size) * factor);
 
-export { horizontalScale, verticalScale, moderateScale, guidelineBaseWidth };
+const lineHeightScale = (fontSize: number, factor: number = 1) =>
+  parseInt((moderateScale(fontSize) * factor).toString(), 10);
+
+export {
+  horizontalScale,
+  verticalScale,
+  moderateScale,
+  guidelineBaseWidth,
+  lineHeightScale,
+};
