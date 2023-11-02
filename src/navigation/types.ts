@@ -16,8 +16,10 @@ import type {
   DEV,
   DEV_MENU,
   DEV_STORY_BOOK,
+  LOGIN,
   ONBOARDING,
   PUBLIC,
+  SIGNUP,
   SPLASH,
   WELCOME,
 } from 'constants/screen-names';
@@ -28,9 +30,16 @@ export type ScreensParamsList = {
   [SPLASH]: undefined;
   [WELCOME]: undefined;
   [ONBOARDING]: undefined;
+  [LOGIN]: undefined;
+  [SIGNUP]: undefined;
 };
 
-export type PublicScreens = typeof SPLASH | typeof WELCOME | typeof ONBOARDING;
+export type PublicScreens =
+  | typeof SPLASH
+  | typeof WELCOME
+  | typeof ONBOARDING
+  | typeof LOGIN
+  | typeof SIGNUP;
 export type PublicNavigatorParamList = Pick<ScreensParamsList, PublicScreens>;
 
 export type DevScreens = typeof DEV_MENU | typeof DEV_STORY_BOOK;

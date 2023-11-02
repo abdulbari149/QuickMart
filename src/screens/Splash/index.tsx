@@ -4,7 +4,7 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Image, View } from 'react-native';
 
 import type { PublicNavigatorParamList } from 'navigation/types';
-import { type SPLASH, ONBOARDING, WELCOME } from 'constants/screen-names';
+import { type SPLASH, ONBOARDING, LOGIN } from 'constants/screen-names';
 
 import assets from 'assets';
 import useBootstrapApp from 'hooks/use-bootstrap-app';
@@ -26,7 +26,7 @@ const Splash: SplashScreen = ({ navigation }) => {
     async onComplete() {
       const isOnboardingComplete = await Storage.get(ONBOARDING_COMPLETE);
       if (isOnboardingComplete) {
-        return navigation.navigate(WELCOME);
+        return navigation.navigate(LOGIN);
       }
       return navigation.navigate(ONBOARDING);
     },

@@ -2,11 +2,17 @@ import React from 'react';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { ONBOARDING, SPLASH, WELCOME } from 'constants/screen-names';
+import {
+  LOGIN,
+  ONBOARDING,
+  SIGNUP,
+  SPLASH,
+  WELCOME,
+} from 'constants/screen-names';
 
 import type { PublicNavigatorParamList } from 'navigation/types';
 
-import { Onboarding, Splash, Welcome } from 'screens';
+import { Login, Onboarding, Signup, Splash, Welcome } from 'screens';
 
 const Stack = createNativeStackNavigator<PublicNavigatorParamList>();
 
@@ -20,6 +26,8 @@ const PublicNavigator = () => (
     <Stack.Screen name={SPLASH} component={Splash} key={SPLASH} />
     <Stack.Screen name={ONBOARDING} component={Onboarding} key={ONBOARDING} />
     <Stack.Screen name={WELCOME} component={Welcome} key={WELCOME} />
+    <Stack.Screen name={SIGNUP} component={Signup} key={SIGNUP} />
+    <Stack.Screen name={LOGIN} component={Login} key={LOGIN} />
   </Stack.Navigator>
 );
 export default PublicNavigator;
