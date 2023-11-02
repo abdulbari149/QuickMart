@@ -17,7 +17,7 @@ import LocalesProvider from 'context/locales';
 import useCurrentLocale from 'hooks/use-current-locale';
 import Navigation from 'navigation';
 
-import { Colors } from 'styles';
+import { Colors, Dimensions } from 'styles';
 
 const styles = StyleSheet.create({
   android: {
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   },
   ios: {
     flex: 1,
-    marginTop: 18,
+    marginTop: Dimensions.height.size5,
   },
 });
 const App: React.FC = () => {
