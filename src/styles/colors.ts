@@ -2,6 +2,8 @@
 
 const colors = {
   cyan: '#21D4B4',
+  primary: '#21D4B4',
+  secondary: '#6F7384',
   cyan50: '#F4FDFA',
   black: '#1C1B1B',
   white: '#ffffff',

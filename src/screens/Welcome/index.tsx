@@ -2,15 +2,15 @@ import React from 'react';
 
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-import { Text, TouchableOpacity } from 'react-native';
+import { View } from 'react-native';
 
 import { useTranslation } from 'context/locales';
 import type { PublicNavigatorParamList } from 'navigation/types';
 import type { WELCOME } from 'constants/screen-names';
 
-import { useTheme } from 'context/theme';
+import Typography from 'components/Typography';
 
-import { AppText, Container } from './styles';
+import styles from './styles';
 
 type WelcomeProps = NativeStackScreenProps<
   PublicNavigatorParamList,
@@ -21,14 +21,10 @@ type WelcomeScreen = React.FC<WelcomeProps>;
 
 const Welcome: WelcomeScreen = () => {
   const { t } = useTranslation('global');
-  const { toggleMode } = useTheme();
   return (
-    <Container>
-      <AppText>{t('appName')}</AppText>
-      <TouchableOpacity onPress={toggleMode}>
-        <Text>toggle mode</Text>
-      </TouchableOpacity>
-    </Container>
+    <View style={styles.container}>
+      <Typography variant="body1">{t('appName')}</Typography>
+    </View>
   );
 };
 
