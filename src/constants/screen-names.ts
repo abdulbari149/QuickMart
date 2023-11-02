@@ -6,3 +6,4 @@ export const DEV_STORY_BOOK = 'DevStoryBook';
 
 export const SPLASH = 'Splash';
 export const WELCOME = 'Welcome';
+export const ONBOARDING = 'Onboarding';

@@ -16,32 +16,25 @@ import type {
   DEV,
   DEV_MENU,
   DEV_STORY_BOOK,
+  ONBOARDING,
   PUBLIC,
   SPLASH,
   WELCOME,
 } from 'constants/screen-names';
 
-type DevMenuParams = undefined;
-type DevStoryBookParams = undefined;
-type SplashParams = undefined;
-type WelcomeParams = undefined;
-
 export type ScreensParamsList = {
-  [DEV_MENU]: DevMenuParams;
-  [DEV_STORY_BOOK]: DevStoryBookParams;
-  [SPLASH]: SplashParams;
-  [WELCOME]: WelcomeParams;
+  [DEV_MENU]: undefined;
+  [DEV_STORY_BOOK]: undefined;
+  [SPLASH]: undefined;
+  [WELCOME]: undefined;
+  [ONBOARDING]: undefined;
 };
 
-export type PublicNavigatorParamList = Pick<
-  ScreensParamsList,
-  typeof SPLASH | typeof WELCOME
->;
+export type PublicScreens = typeof SPLASH | typeof WELCOME | typeof ONBOARDING;
+export type PublicNavigatorParamList = Pick<ScreensParamsList, PublicScreens>;
 
-export type DevNavigatorParamList = Pick<
-  ScreensParamsList,
-  typeof DEV_MENU | typeof DEV_STORY_BOOK
->;
+export type DevScreens = typeof DEV_MENU | typeof DEV_STORY_BOOK;
+export type DevNavigatorParamList = Pick<ScreensParamsList, DevScreens>;
 
 export type MainNavigatorParamList = {
   [DEV]: NavigatorScreenParams<DevNavigatorParamList>;
