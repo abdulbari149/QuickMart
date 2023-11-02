@@ -18,7 +18,6 @@ export default {
     en: {
       variant: 'contained',
       title: 'Button',
-      color: 'primary',
       style: { button: { marginBottom: 10 } },
     },
   },

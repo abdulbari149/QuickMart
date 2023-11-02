@@ -15,36 +15,37 @@ import type { OptionalPropertyOf } from 'types/utils';
 
 import styles from './styles';
 import type {
-  ButtonColors,
   ButtonComponent,
   ButtonProps,
   ButtonVariants,
 } from './button.types';
 
-type VariantReturnObj = (color: ButtonColors) => {
+type VariantStyles = {
   button: ViewStyle;
   text: TextStyle;
 };
 
-const buttonVariantStyles: Record<ButtonVariants, VariantReturnObj> = {
-  outlined: (color) => ({
+const buttonVariantStyles: Record<ButtonVariants, VariantStyles> = {
+  outlined: {
     button: {
       backgroundColor: Colors.white,
-      borderColor: Colors[color],
-      borderWidth: 2,
+      borderColor: Colors.grey50,
+      borderWidth: 1,
     },
     text: {
-      color: Colors[color],
+      color: Colors.black,
     },
-  }),
-  contained: (color) => ({
+  },
+  contained: {
     button: {
-      backgroundColor: Colors[color],
+      backgroundColor: Colors.black,
+      borderColor: Colors.black,
+      borderWidth: 1,
     },
     text: {
       color: Colors.white,
     },
-  }),
+  },
 };
 
 const defaultProps: Required<
@@ -69,7 +70,6 @@ const Button: ButtonComponent = (props) => {
   const {
     disabled,
     variant,
-    color,
     title,
     loading,
     loadingColor,
@@ -80,7 +80,7 @@ const Button: ButtonComponent = (props) => {
 
   const [isPressed, setIsPressed] = useState(false);
 
-  const variantStyles = buttonVariantStyles[variant](color);
+  const variantStyles = buttonVariantStyles[variant];
 
   const handlePress = async (event: GestureResponderEvent) => {
     setIsPressed(true);

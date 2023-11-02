@@ -4,7 +4,7 @@ import type { TouchableOpacityProps, TextStyle, ViewStyle } from 'react-native';
 import type { Colors } from 'styles';
 
 export type ButtonVariants = 'contained' | 'outlined';
-export type ButtonColors = keyof typeof Colors;
+export type ButtonColors = 'primary' | 'secondary';
 export interface ButtonProps extends Omit<TouchableOpacityProps, 'style'> {
   disabled?: boolean;
   loading?: boolean;
@@ -12,10 +12,9 @@ export interface ButtonProps extends Omit<TouchableOpacityProps, 'style'> {
     button?: ViewStyle;
     text?: TextStyle;
   };
-  loadingColor?: ButtonColors;
+  loadingColor?: keyof typeof Colors;
   title: string;
   variant: ButtonVariants;
-  color: ButtonColors;
 }
 
 export type ButtonComponent = React.FC<ButtonProps>;
