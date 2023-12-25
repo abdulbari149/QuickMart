@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     borderRadius: moderateScale(10),
     backgroundColor: Colors.primary,
     paddingHorizontal: Spacing.horizontal.size20,
-    paddingVertical: Spacing.vertical.size12,
+    paddingVertical: Spacing.vertical.size20,
     width: '100%',
     elevation: 5,
     shadowColor: Colors.cyan50,
@@ -19,6 +19,12 @@ const styles = StyleSheet.create({
   },
   text: {
     color: Colors.white,
+  },
+  buttonWithLeftIcon: {
+    display: 'flex',
+    flexDirection: 'row',
+    gap: 10,
+    alignItems: 'center',
   },
 });
 

@@ -11,7 +11,7 @@ import { Colors } from 'styles';
 
 import Typography from 'components/Typography';
 
-import type { OptionalPropertyOf } from 'types/utils';
+import type { OptionalPropertyOf } from 'types';
 
 import styles from './styles';
 import type {
@@ -60,7 +60,7 @@ const defaultProps: Required<
     button: {},
     text: {},
   },
-  IconLeft: null,
+  IconRight: null,
   loading: false,
   loadingColor: 'white',
   disabled: false,
@@ -76,7 +76,7 @@ const Button: ButtonComponent = (props) => {
     loadingColor,
     style,
     onPress,
-    IconLeft,
+    IconRight,
     ...other
   } = { ...defaultProps, ...props };
 
@@ -97,7 +97,8 @@ const Button: ButtonComponent = (props) => {
     ...styles.button,
     ...variantStyles.button,
     ...(style?.button ?? {}),
-  };
+    ...(IconRight ? styles.buttonWithLeftIcon : {}),
+  } as const;
 
   const textStyles = {
     ...styles.text,
@@ -115,11 +116,11 @@ const Button: ButtonComponent = (props) => {
       {isLoading ? (
         <ActivityIndicator size={18} color={Colors[loadingColor]} />
       ) : (
-        <Typography variant="button1" style={textStyles}>
+        <Typography variant="button1" mode="semi-bold" style={textStyles}>
           {title}
         </Typography>
       )}
-      {IconLeft}
+      {IconRight}
     </TouchableOpacity>
   );
 };

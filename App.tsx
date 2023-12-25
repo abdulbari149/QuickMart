@@ -22,6 +22,7 @@ import { Colors, Dimensions } from 'styles';
 const styles = StyleSheet.create({
   android: {
     flex: 1,
+    marginTop: Dimensions.height.size5,
   },
   ios: {
     flex: 1,
