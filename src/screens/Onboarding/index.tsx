@@ -8,12 +8,13 @@ import type { PublicNavigatorParamList } from 'navigation/types';
 import type { ONBOARDING } from 'constants/screen-names';
 import { LOGIN } from 'constants/screen-names';
 import assets from 'assets';
-
 import Typography from 'components/Typography';
 import Button from 'components/Button';
 import Storage from 'utils/storage';
 import { ONBOARDING_COMPLETE } from 'constants/storage';
 import { Colors } from 'styles';
+import ArrowLeft from 'assets/svgs/arrow-left.svg';
+import { moderateScale } from 'utils/styles';
 
 import styles from './styles';
 
@@ -63,13 +64,9 @@ const OnboardingItem: React.FC<OnboardingItemProps> = ({
     <View style={styles.banner}>
       <View style={styles.bannerTop}>
         {index === 0 ? (
-          <Image key="logo" source={assets.images.logo} style={styles.logo} />
+          <Image key="logo" source={assets.images.logo} />
         ) : (
-          <Image
-            key="arrow-left"
-            source={assets.images.arrowLeft}
-            style={styles.arrowLeft}
-          />
+          <Image key="arrow-left" source={assets.images.arrowLeft} />
         )}
         <Typography
           variant="body2"
@@ -89,12 +86,39 @@ const OnboardingItem: React.FC<OnboardingItemProps> = ({
       <Typography variant="body2" style={styles.subtitle}>
         {item.subtitle}
       </Typography>
-      <Button
-        variant="contained"
-        title={index === screens.length - 1 ? 'Get Started' : 'Next'}
-        style={{ button: styles.button }}
-        onPress={onNext}
-      />
+      {index === screens.length - 1 ? (
+        <View style={styles.buttonContainer}>
+          <Button
+            variant="outlined"
+            title="Login"
+            style={{
+              button: { ...styles.button, flex: 1, borderColor: Colors.grey50 },
+            }}
+            onPress={onNext}
+          />
+          <Button
+            variant="contained"
+            title="Get Started"
+            style={{
+              button: {
+                ...styles.button,
+                ...styles.buttonGetStarted,
+              },
+            }}
+            onPress={onNext}
+            IconLeft={
+              <ArrowLeft width={moderateScale(20)} height={moderateScale(20)} />
+            }
+          />
+        </View>
+      ) : (
+        <Button
+          variant="contained"
+          title="Next"
+          style={{ button: styles.button }}
+          onPress={onNext}
+        />
+      )}
     </View>
   </View>
 );

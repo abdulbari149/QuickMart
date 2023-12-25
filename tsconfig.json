@@ -6,7 +6,7 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "jsx": "react-native",
-    "lib": ["es2018"],
+    "lib": ["ESNext"],
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "noEmit": true,
@@ -27,7 +27,7 @@
       "./node_modules/@tsconfig/react-native",
       "src/types"
     ],
-    "types": ["react-native"],
+    "types": ["react-native", "jest"],
     "sourceMap": true,
     "inlineSources": true,
     "sourceRoot": "/"

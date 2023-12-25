@@ -60,6 +60,7 @@ const defaultProps: Required<
     button: {},
     text: {},
   },
+  IconLeft: null,
   loading: false,
   loadingColor: 'white',
   disabled: false,
@@ -75,8 +76,9 @@ const Button: ButtonComponent = (props) => {
     loadingColor,
     style,
     onPress,
+    IconLeft,
     ...other
-  } = Object.assign(defaultProps, props);
+  } = { ...defaultProps, ...props };
 
   const [isPressed, setIsPressed] = useState(false);
 
@@ -117,6 +119,7 @@ const Button: ButtonComponent = (props) => {
           {title}
         </Typography>
       )}
+      {IconLeft}
     </TouchableOpacity>
   );
 };

@@ -8,12 +8,11 @@ const styles = StyleSheet.create({
     ...Layouts.container,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: Dimensions.height.size4,
     backgroundColor: Colors.white,
   },
   pagination: {
     position: 'absolute',
-    top: Dimensions.height.size90,
+    top: Dimensions.height.size93,
   },
   paginationItem: {
     backgroundColor: Colors.white,
@@ -41,7 +40,7 @@ const styles = StyleSheet.create({
   },
   item: {
     alignItems: 'center',
-    gap: 15,
+    gap: 25,
     width: Dimensions.width.size100,
   },
   image: {
@@ -51,7 +50,7 @@ const styles = StyleSheet.create({
   },
   banner: {
     width: Dimensions.width.size90,
-    height: Dimensions.height.size55,
+    height: Dimensions.height.size60,
     backgroundColor: Colors.cyan50,
     alignSelf: 'center',
     paddingHorizontal: Spacing.horizontal.globalHorizontalPadding,
@@ -72,12 +71,24 @@ const styles = StyleSheet.create({
     gap: 10,
     alignItems: 'center',
   },
-  logo: {},
-  arrowLeft: {},
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: Spacing.horizontal.globalHorizontalPadding,
+    gap: 15,
+  },
   button: {
     width: Dimensions.width.size90,
     paddingVertical: Spacing.vertical.size16,
     marginTop: Spacing.vertical.size12,
+  },
+  buttonGetStarted: {
+    display: 'flex',
+    flexDirection: 'row',
+    gap: 10,
+    alignItems: 'center',
+    flex: 1,
   },
 });
 

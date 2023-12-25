@@ -12,6 +12,7 @@ export interface ButtonProps extends Omit<TouchableOpacityProps, 'style'> {
     button?: ViewStyle;
     text?: TextStyle;
   };
+  IconLeft?: React.ReactNode;
   loadingColor?: keyof typeof Colors;
   title: string;
   variant: ButtonVariants;

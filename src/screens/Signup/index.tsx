@@ -17,4 +17,5 @@ const Signup: SignupScreen = () => (
     <Text>Signup Screen</Text>
   </View>
 );
+
 export default Signup;
