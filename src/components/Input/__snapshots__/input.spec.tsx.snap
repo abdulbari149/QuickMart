@@ -1,0 +1,251 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given - Input component and props are: {"InputLeftElement":null,"InputRightElement":null,"label":"Email Address"} should render correctly and match snapshot 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "#FFFFFF",
+        "borderColor": "#CCCCCC",
+        "borderRadius": 24,
+        "borderWidth": 1,
+        "flexDirection": "row",
+        "marginVertical": 14,
+        "paddingHorizontal": 5,
+        "paddingVertical": 27,
+        "width": "100%",
+      },
+      {},
+    ]
+  }
+>
+  <View
+    style={
+      [
+        {
+          "flex": 1,
+          "flexDirection": "column",
+          "gap": 2,
+          "paddingHorizontal": 34,
+        },
+        {},
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#000000",
+            "fontSize": 19,
+            "fontWeight": "normal",
+            "letterSpacing": 0.3,
+          },
+          {
+            "color": "#0A4E8Eaa",
+            "fontSize": 18,
+            "paddingHorizontal": 1,
+          },
+          {},
+        ]
+      }
+    >
+      Email Address
+    </Text>
+    <TextInput
+      accessibilityLabel="input field"
+      autoCapitalize="none"
+      autoCorrect={false}
+      placeholderTextColor="#CCCCCC"
+      style={
+        [
+          {
+            "color": "#000000",
+            "fontSize": 24,
+          },
+          {},
+        ]
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`Given - Input component and props are: {"InputLeftElement":null,"InputRightElement":null} should render correctly and match snapshot 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "#FFFFFF",
+        "borderColor": "#CCCCCC",
+        "borderRadius": 24,
+        "borderWidth": 1,
+        "flexDirection": "row",
+        "marginVertical": 14,
+        "paddingHorizontal": 5,
+        "paddingVertical": 27,
+        "width": "100%",
+      },
+      {},
+    ]
+  }
+>
+  <View
+    style={
+      [
+        {
+          "flex": 1,
+          "flexDirection": "column",
+          "gap": 2,
+          "paddingHorizontal": 34,
+        },
+        {},
+      ]
+    }
+  >
+    <TextInput
+      accessibilityLabel="input field"
+      autoCapitalize="none"
+      autoCorrect={false}
+      placeholderTextColor="#CCCCCC"
+      style={
+        [
+          {
+            "color": "#000000",
+            "fontSize": 24,
+          },
+          {},
+        ]
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`Given - Input component and props are: {"placeholder":"Enter your email","InputLeftElement":null,"InputRightElement":null,"label":"Email Address"} should render correctly and match snapshot 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "#FFFFFF",
+        "borderColor": "#CCCCCC",
+        "borderRadius": 24,
+        "borderWidth": 1,
+        "flexDirection": "row",
+        "marginVertical": 14,
+        "paddingHorizontal": 5,
+        "paddingVertical": 27,
+        "width": "100%",
+      },
+      {},
+    ]
+  }
+>
+  <View
+    style={
+      [
+        {
+          "flex": 1,
+          "flexDirection": "column",
+          "gap": 2,
+          "paddingHorizontal": 34,
+        },
+        {},
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#000000",
+            "fontSize": 19,
+            "fontWeight": "normal",
+            "letterSpacing": 0.3,
+          },
+          {
+            "color": "#0A4E8Eaa",
+            "fontSize": 18,
+            "paddingHorizontal": 1,
+          },
+          {},
+        ]
+      }
+    >
+      Email Address
+    </Text>
+    <TextInput
+      accessibilityLabel="input field"
+      autoCapitalize="none"
+      autoCorrect={false}
+      placeholder="Enter your email"
+      placeholderTextColor="#CCCCCC"
+      style={
+        [
+          {
+            "color": "#000000",
+            "fontSize": 24,
+          },
+          {},
+        ]
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`Given - Input component and props are: {"placeholder":"Enter your email","InputLeftElement":null,"InputRightElement":null} should render correctly and match snapshot 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "#FFFFFF",
+        "borderColor": "#CCCCCC",
+        "borderRadius": 24,
+        "borderWidth": 1,
+        "flexDirection": "row",
+        "marginVertical": 14,
+        "paddingHorizontal": 5,
+        "paddingVertical": 27,
+        "width": "100%",
+      },
+      {},
+    ]
+  }
+>
+  <View
+    style={
+      [
+        {
+          "flex": 1,
+          "flexDirection": "column",
+          "gap": 2,
+          "paddingHorizontal": 34,
+        },
+        {},
+      ]
+    }
+  >
+    <TextInput
+      accessibilityLabel="input field"
+      autoCapitalize="none"
+      autoCorrect={false}
+      placeholder="Enter your email"
+      placeholderTextColor="#CCCCCC"
+      style={
+        [
+          {
+            "color": "#000000",
+            "fontSize": 24,
+          },
+          {},
+        ]
+      }
+    />
+  </View>
+</View>
+`;
