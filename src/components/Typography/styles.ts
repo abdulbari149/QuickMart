@@ -64,4 +64,11 @@ const typographyVariants: Record<TypographyVariants, TextStyle> = {
   },
 };
 
-export default { typographyVariants };
+const typographyModes = {
+  bold: 'bold',
+  'semi-bold': '600',
+  regular: '300',
+  medium: 'normal',
+} as const;
+
+export default { typographyVariants, typographyModes };

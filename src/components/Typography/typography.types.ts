@@ -12,8 +12,11 @@ export type TypographyVariants =
   | 'caption'
   | 'overline';
 
+type TypographyMode = 'bold' | 'semi-bold' | 'regular' | 'medium';
+
 export interface TypographyProps extends TextProps {
   variant: TypographyVariants;
   children: string;
+  mode?: TypographyMode;
 }
 export type TypogrpahyComponent = (props: TypographyProps) => JSX.Element;
