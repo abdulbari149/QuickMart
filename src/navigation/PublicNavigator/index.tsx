@@ -7,6 +7,7 @@ import {
   LOGIN,
   ONBOARDING,
   RESET_PASSWORD,
+  RESET_PASSWORD_SUCCESS,
   SIGNUP,
   SPLASH,
   WELCOME,
@@ -19,6 +20,7 @@ import {
   Login,
   Onboarding,
   ResetPassword,
+  ResetPasswordSuccess,
   Signup,
   Splash,
   Welcome,
@@ -56,6 +58,13 @@ const PublicNavigator = () => (
         key={RESET_PASSWORD}
       />
     </Stack.Group>
+
+    <Stack.Screen
+      name={RESET_PASSWORD_SUCCESS}
+      component={ResetPasswordSuccess}
+      key={RESET_PASSWORD_SUCCESS}
+      options={{ headerShown: false }}
+    />
   </Stack.Navigator>
 );
 export default PublicNavigator;

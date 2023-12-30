@@ -6,6 +6,7 @@ const onboarding3 = require('./onboarding-3.png');
 const logo = require('./logo.png');
 const arrowLeft = require('./arrow-left.png');
 const quickMart = require('./quickmart.png');
+const newPassword = require('./new-password.png');
 
 module.exports = {
   splashLogo,
@@ -15,4 +16,5 @@ module.exports = {
   logo,
   arrowLeft,
   quickMart,
+  newPassword,
 };

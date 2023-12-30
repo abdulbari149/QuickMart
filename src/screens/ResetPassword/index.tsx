@@ -5,7 +5,10 @@ import React from 'react';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import type { PublicNavigatorParamList } from 'navigation/types';
-import { type RESET_PASSWORD } from 'constants/screen-names';
+import {
+  RESET_PASSWORD_SUCCESS,
+  type RESET_PASSWORD,
+} from 'constants/screen-names';
 
 import Typography from 'components/Typography';
 import Button from 'components/Button';
@@ -22,8 +25,7 @@ export type ResetPasswordProps = NativeStackScreenProps<
 
 export type ResetPasswordScreen = React.FC<ResetPasswordProps>;
 
-const ResetPassword: ResetPasswordScreen = () => {
-  // React.useState('');
+const ResetPassword: ResetPasswordScreen = ({ navigation }) => {
   const { values, handleChange } = useFormState({
     password: '',
     confirmPassword: '',
@@ -62,6 +64,9 @@ const ResetPassword: ResetPasswordScreen = () => {
         <Button
           variant="contained"
           title="Save"
+          onPress={() => {
+            navigation.navigate(RESET_PASSWORD_SUCCESS);
+          }}
           style={{ button: styles.button }}
         />
       </View>

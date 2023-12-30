@@ -18,6 +18,12 @@ const PasswordHeader: PasswordHeaderComponent = ({ navigation }) => {
   const routeName = service.getActiveRouteName(
     navigation.getState(),
   ) as keyof typeof PASSWORD_HEADER_STEPS;
+
+  if (!Object.keys(PASSWORD_HEADER_STEPS).includes(routeName)) {
+    // eslint-disable-next-line react/jsx-no-useless-fragment
+    return <></>;
+  }
+
   const step = PASSWORD_HEADER_STEPS[routeName];
   return (
     <View style={styles.container}>
