@@ -19,7 +19,7 @@ const colors = {
   meriGold: '#FFCB45',
   brown: '#5A1A05',
   pink: '#CE1DEB',
-};
+} as const;
 
 export type IColors = typeof colors;
 

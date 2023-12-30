@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   },
   pagination: {
     position: 'absolute',
-    top: Dimensions.height.size93,
+    bottom: Spacing.vertical.size12,
   },
   paginationItem: {
     backgroundColor: Colors.white,

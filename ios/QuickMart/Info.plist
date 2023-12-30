@@ -4,6 +4,22 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>FontAwesome.tff</string>
+		<string>AntDesign.tff</string>
+		<string>Entypo.tff</string>
+		<string>EvilIcons.tff</string>
+		<string>Feather.tff</string>
+		<string>Fontisto.tff</string>
+		<string>Foundation.tff</string>
+		<string>MaterialIcons.tff</string>
+		<string>Ionicons.tff</string>
+		<string>Octicons.tff</string>
+		<string>SimpleLineIcons.tff</string>
+		<string>Zocial.tff</string>
+		<string>MaterialCommunityIcons.tff</string>
+	</array>
 	<key>CFBundleDisplayName</key>
 	<string>QuickMart</string>
 	<key>CFBundleExecutable</key>

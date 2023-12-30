@@ -116,11 +116,13 @@ const Button: ButtonComponent = (props) => {
       {isLoading ? (
         <ActivityIndicator size={18} color={Colors[loadingColor]} />
       ) : (
-        <Typography variant="button1" mode="semi-bold" style={textStyles}>
-          {title}
-        </Typography>
+        <>
+          <Typography variant="button1" mode="semi-bold" style={textStyles}>
+            {title}
+          </Typography>
+          {IconRight}
+        </>
       )}
-      {IconRight}
     </TouchableOpacity>
   );
 };

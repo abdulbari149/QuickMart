@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 1,
     width: '100%',
     ...Platform.select({
-      ios: { paddingVertical: Spacing.vertical.size16 },
+      ios: { paddingVertical: Spacing.vertical.size20 },
       android: { paddingVertical: Spacing.vertical.size8 },
     }),
   },

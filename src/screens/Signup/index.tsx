@@ -1,23 +1,32 @@
-import { Image, View } from 'react-native';
+import {
+  Image,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import React from 'react';
+import React, { useState } from 'react';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 import Google from 'assets/svgs/google.svg';
 
 import type { PublicNavigatorParamList } from 'navigation/types';
-import type { SIGNUP } from 'constants/screen-names';
+import { LOGIN, type SIGNUP } from 'constants/screen-names';
 import assets from 'assets';
 
 import Typography from 'components/Typography';
 import Button from 'components/Button';
-import { Colors } from 'styles';
+import { Colors, Spacing } from 'styles';
 import Input from 'components/Input';
+import useFormState from 'hooks/use-form-state';
 
 import { moderateScale } from 'utils/styles';
 
 import styles from './styles';
+
+const iconSize = moderateScale(20);
 
 export type SignupProps = NativeStackScreenProps<
   PublicNavigatorParamList,
@@ -26,8 +35,16 @@ export type SignupProps = NativeStackScreenProps<
 
 export type SignupScreen = React.FC<SignupProps>;
 
-const Signup: SignupScreen = () => {
-  React.useState('');
+const Signup: SignupScreen = ({ navigation }) => {
+  // React.useState('');
+  const { values, handleChange } = useFormState({
+    fullName: '',
+    email: '',
+    password: '',
+  });
+
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <KeyboardAwareScrollView
       style={styles.container}
@@ -50,19 +67,43 @@ const Signup: SignupScreen = () => {
           >
             Already have an account?
           </Typography>
-          <Typography
-            variant="body2"
-            mode="medium"
-            style={{ color: Colors.cyan }}
+          <TouchableWithoutFeedback
+            onPress={() => {
+              navigation.navigate(LOGIN);
+            }}
           >
-            Login
-          </Typography>
+            <Typography
+              variant="body2"
+              mode="medium"
+              style={{ color: Colors.cyan }}
+            >
+              Login
+            </Typography>
+          </TouchableWithoutFeedback>
         </View>
       </View>
       <View style={styles.formContainer}>
         <Input label="Full Name" placeholder="Enter your full name" />
         <Input label="Email" placeholder="Enter your email" />
-        <Input label="Password" placeholder="Enter your password" />
+        <Input
+          label="Password"
+          secureTextEntry={!showPassword}
+          value={values.password}
+          onChangeText={handleChange('password')}
+          placeholder="Enter your password"
+          InputRightElement={
+            <TouchableOpacity
+              style={{ paddingRight: Spacing.horizontal.size12 }}
+              onPress={() => setShowPassword((prev) => !prev)}
+            >
+              <FontAwesome
+                name={showPassword ? 'eye' : 'eye-slash'}
+                color={Colors.grey150}
+                size={iconSize}
+              />
+            </TouchableOpacity>
+          }
+        />
         <Button
           variant="contained"
           title="Create Account"

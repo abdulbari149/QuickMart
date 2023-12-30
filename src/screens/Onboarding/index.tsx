@@ -6,7 +6,7 @@ import SwiperFlatList from 'react-native-swiper-flatlist';
 
 import type { PublicNavigatorParamList } from 'navigation/types';
 import type { ONBOARDING } from 'constants/screen-names';
-import { SIGNUP } from 'constants/screen-names';
+import { LOGIN, SIGNUP } from 'constants/screen-names';
 import assets from 'assets';
 import Typography from 'components/Typography';
 import Button from 'components/Button';
@@ -53,12 +53,14 @@ type OnboardingItemProps = {
   index: number;
   item: (typeof screens)[0];
   onNext: () => void;
+  onLogin: () => void;
 };
 
 const OnboardingItem: React.FC<OnboardingItemProps> = ({
   item,
   index,
   onNext,
+  onLogin,
 }) => (
   <View style={styles.item}>
     <View style={styles.banner}>
@@ -94,7 +96,7 @@ const OnboardingItem: React.FC<OnboardingItemProps> = ({
             style={{
               button: { ...styles.button, flex: 1, borderColor: Colors.grey50 },
             }}
-            onPress={onNext}
+            onPress={onLogin}
           />
           <Button
             variant="contained"
@@ -154,6 +156,7 @@ const Onboarding: OnboardingScreen = ({ navigation }) => {
             item={item}
             index={index}
             onNext={() => onNextPress(index)}
+            onLogin={() => navigation.navigate(LOGIN)}
           />
         )}
       />

@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 import { Colors, Dimensions, Spacing } from 'styles';
 
@@ -7,10 +7,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   contentContainer: {
-    paddingTop: Spacing.vertical.size20,
+    minHeight: Platform.select({
+      ios: Dimensions.height.size100 - Dimensions.height.size6,
+      android: Dimensions.height.size100,
+    }),
+    paddingTop: Spacing.vertical.size12,
     paddingHorizontal: Spacing.horizontal.globalHorizontalPadding,
     backgroundColor: Colors.white,
-    minHeight: Dimensions.height.size100,
   },
   quickMartLogo: {
     width: Dimensions.width.size32,
@@ -31,7 +34,7 @@ const styles = StyleSheet.create({
     gap: Spacing.vertical.size16,
   },
   signupButton: {
-    marginTop: Spacing.vertical.size16,
+    marginTop: Spacing.vertical.size8,
   },
   googleButton: {
     marginTop: Spacing.vertical.size16,

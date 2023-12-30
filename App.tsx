@@ -11,40 +11,43 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { Platform, StatusBar, StyleSheet } from 'react-native';
+import { StatusBar, View } from 'react-native';
+
+import { Provider } from 'jotai';
 
 import LocalesProvider from 'context/locales';
 import useCurrentLocale from 'hooks/use-current-locale';
-import Navigation from 'navigation';
 
 import { Colors, Dimensions } from 'styles';
+import Navigation from 'navigation';
 
-const styles = StyleSheet.create({
-  android: {
-    flex: 1,
-    marginTop: Dimensions.height.size5,
-  },
-  ios: {
-    flex: 1,
-    marginTop: Dimensions.height.size5,
-  },
-});
-const App: React.FC = () => {
+import store from './src/store/index';
+
+const App = (): JSX.Element => {
   const { selectedLocale } = useCurrentLocale();
 
-  const rootStyles = Platform.OS === 'android' ? styles.android : styles.ios;
-
   return (
-    <GestureHandlerRootView style={rootStyles}>
+    <GestureHandlerRootView style={{ flex: 1 }}>
       <StatusBar
-        backgroundColor={Colors.white}
-        translucent
+        backgroundColor="transparent"
         barStyle="dark-content"
+        translucent
       />
       <SafeAreaProvider>
-        <LocalesProvider defaultLocale="en" locale={selectedLocale}>
-          <Navigation />
-        </LocalesProvider>
+        <Provider store={store}>
+          <View
+            style={{
+              flex: 1,
+              backgroundColor: Colors.white,
+              paddingTop: Dimensions.height.size5,
+              paddingBottom: Dimensions.height.size1,
+            }}
+          >
+            <LocalesProvider defaultLocale="en" locale={selectedLocale}>
+              <Navigation />
+            </LocalesProvider>
+          </View>
+        </Provider>
       </SafeAreaProvider>
     </GestureHandlerRootView>
   );

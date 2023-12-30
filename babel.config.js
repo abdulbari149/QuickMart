@@ -18,6 +18,7 @@ module.exports = {
           types: './src/types',
           api: './src/api',
           logging: './src/logging',
+          store: './src/store',
         },
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
         root: './src/',

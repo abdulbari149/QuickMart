@@ -1,8 +1,8 @@
-import { horizontalScale, verticalScale } from 'utils/styles';
+import { horizontalScale, moderateScale, verticalScale } from 'utils/styles';
 
 const Spacing = {
   horizontal: {
-    globalHorizontalPadding: 16,
+    globalHorizontalPadding: moderateScale(16),
     size4: horizontalScale(4),
     size8: horizontalScale(8),
     size12: horizontalScale(12),
