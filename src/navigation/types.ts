@@ -16,9 +16,12 @@ import type {
   DEV,
   DEV_MENU,
   DEV_STORY_BOOK,
+  FORGOT_PASSWORD,
   LOGIN,
   ONBOARDING,
   PUBLIC,
+  RESET_PASSWORD,
+  RESET_PASSWORD_SUCCESS,
   SIGNUP,
   SPLASH,
   WELCOME,
@@ -32,6 +35,9 @@ export type ScreensParamsList = {
   [ONBOARDING]: undefined;
   [LOGIN]: undefined;
   [SIGNUP]: undefined;
+  [FORGOT_PASSWORD]: undefined;
+  [RESET_PASSWORD]: undefined;
+  [RESET_PASSWORD_SUCCESS]: undefined;
 };
 
 export type PublicScreens =
@@ -39,7 +45,11 @@ export type PublicScreens =
   | typeof WELCOME
   | typeof ONBOARDING
   | typeof LOGIN
-  | typeof SIGNUP;
+  | typeof SIGNUP
+  | typeof FORGOT_PASSWORD
+  | typeof RESET_PASSWORD
+  | typeof RESET_PASSWORD_SUCCESS;
+
 export type PublicNavigatorParamList = Pick<ScreensParamsList, PublicScreens>;
 
 export type DevScreens = typeof DEV_MENU | typeof DEV_STORY_BOOK;

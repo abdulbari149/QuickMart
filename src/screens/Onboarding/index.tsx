@@ -13,7 +13,7 @@ import Button from 'components/Button';
 import Storage from 'utils/storage';
 import { ONBOARDING_COMPLETE } from 'constants/storage';
 import { Colors } from 'styles';
-import ArrowLeft from 'assets/svgs/arrow-left.svg';
+import ArrowRight from 'assets/svgs/arrow-right.svg';
 import { moderateScale } from 'utils/styles';
 
 import styles from './styles';
@@ -109,7 +109,10 @@ const OnboardingItem: React.FC<OnboardingItemProps> = ({
             }}
             onPress={onNext}
             IconRight={
-              <ArrowLeft width={moderateScale(20)} height={moderateScale(20)} />
+              <ArrowRight
+                width={moderateScale(20)}
+                height={moderateScale(20)}
+              />
             }
           />
         </View>

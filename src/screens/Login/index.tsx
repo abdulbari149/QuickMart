@@ -1,26 +1,25 @@
-import { Image, TouchableOpacity, View } from 'react-native';
+import { Image, TouchableWithoutFeedback, View } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import React, { useState } from 'react';
+import React from 'react';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 
 import Google from 'assets/svgs/google.svg';
 
 import type { PublicNavigatorParamList } from 'navigation/types';
-import type { LOGIN } from 'constants/screen-names';
+import { FORGOT_PASSWORD, type LOGIN } from 'constants/screen-names';
 import assets from 'assets';
 
 import Typography from 'components/Typography';
 import Button from 'components/Button';
-import { Colors, Spacing } from 'styles';
+import { Colors } from 'styles';
 import Input from 'components/Input';
 
 import { moderateScale } from 'utils/styles';
 import useFormState from 'hooks/use-form-state';
 
-import styles from './styles';
+import PasswordInput from 'components/PasswordInput';
 
-const iconSize = moderateScale(20);
+import styles from './styles';
 
 export type LoginProps = NativeStackScreenProps<
   PublicNavigatorParamList,
@@ -29,13 +28,11 @@ export type LoginProps = NativeStackScreenProps<
 
 export type LoginScreen = React.FC<LoginProps>;
 
-const Login: LoginScreen = () => {
+const Login: LoginScreen = ({ navigation }) => {
   const { values, handleChange } = useFormState({
     email: '',
     password: '',
   });
-
-  const [showPassword, setShowPassword] = useState(false);
 
   return (
     <KeyboardAwareScrollView
@@ -75,29 +72,23 @@ const Login: LoginScreen = () => {
           onChangeText={handleChange('email')}
           placeholder="Enter your email"
         />
-        <Input
+        <PasswordInput
           label="Password"
           value={values.password}
           onChangeText={handleChange('password')}
           placeholder="Enter your password"
-          secureTextEntry={!showPassword}
-          InputRightElement={
-            <TouchableOpacity
-              style={{ paddingRight: Spacing.horizontal.size12 }}
-              onPress={() => setShowPassword((prev) => !prev)}
-            >
-              <FontAwesomeIcon
-                name={showPassword ? 'eye' : 'eye-slash'}
-                color={Colors.grey150}
-                size={iconSize}
-              />
-            </TouchableOpacity>
-          }
         />
-
-        <Typography variant="body2" mode="medium" style={styles.forgotPassword}>
-          Forgot Password?
-        </Typography>
+        <TouchableWithoutFeedback
+          onPress={() => navigation.navigate(FORGOT_PASSWORD)}
+        >
+          <Typography
+            variant="body2"
+            mode="medium"
+            style={styles.forgotPassword}
+          >
+            Forgot Password?
+          </Typography>
+        </TouchableWithoutFeedback>
         <Button
           variant="contained"
           title="Login"

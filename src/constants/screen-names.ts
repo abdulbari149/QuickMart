@@ -9,3 +9,6 @@ export const WELCOME = 'Welcome';
 export const ONBOARDING = 'Onboarding';
 export const LOGIN = 'Login';
 export const SIGNUP = 'Signup';
+export const FORGOT_PASSWORD = 'ForgotPassword';
+export const RESET_PASSWORD = 'ResetPassword';
+export const RESET_PASSWORD_SUCCESS = 'ResetPasswordSuccess';
