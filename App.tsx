@@ -21,10 +21,13 @@ import useCurrentLocale from 'hooks/use-current-locale';
 import { Colors, Dimensions } from 'styles';
 import Navigation from 'navigation';
 
+import useGoogleSignin from 'hooks/use-google-signin';
+
 import store from './src/store/index';
 
 const App = (): JSX.Element => {
   const { selectedLocale } = useCurrentLocale();
+  useGoogleSignin();
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>

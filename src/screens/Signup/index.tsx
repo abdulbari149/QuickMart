@@ -21,6 +21,7 @@ import { moderateScale } from 'utils/styles';
 import PasswordInput from 'components/PasswordInput';
 
 import styles from './styles';
+import useGoogleSignin from 'hooks/use-google-signin';
 
 export type SignupProps = NativeStackScreenProps<
   PublicNavigatorParamList,
@@ -36,6 +37,17 @@ const Signup: SignupScreen = ({ navigation }) => {
     email: '',
     password: '',
   });
+
+  const google = useGoogleSignin();
+
+
+  const handleGoogleSignin = async () => {
+    try {
+      
+    } catch (error) {
+      
+    }
+  }
 
   return (
     <KeyboardAwareScrollView
@@ -96,6 +108,7 @@ const Signup: SignupScreen = ({ navigation }) => {
         IconRight={
           <Google width={moderateScale(24)} height={moderateScale(24)} />
         }
+        onPress={handleGoogleSignin}
       />
     </KeyboardAwareScrollView>
   );
