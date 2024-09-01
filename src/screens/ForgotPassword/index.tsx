@@ -5,7 +5,11 @@ import React from 'react';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import type { PublicNavigatorParamList } from 'navigation/types';
-import { RESET_PASSWORD, type FORGOT_PASSWORD } from 'constants/screen-names';
+import {
+  EMAIL_VERIFICATION,
+  FORGOT_PASSWORD,
+  RESET_PASSWORD,
+} from 'constants/screen-names';
 
 import Typography from 'components/Typography';
 import Button from 'components/Button';
@@ -56,7 +60,7 @@ const ForgotPassword: ForgotPasswordScreen = ({ navigation }) => {
           title="Send"
           style={{ button: styles.sendButton }}
           onPress={() => {
-            navigation.navigate(RESET_PASSWORD);
+            navigation.navigate(EMAIL_VERIFICATION, { from: FORGOT_PASSWORD });
           }}
         />
       </View>

@@ -9,12 +9,14 @@ import Typography from 'components/Typography';
 import ArrowLeft from 'assets/svgs/arrow-left.svg';
 import { moderateScale } from 'utils/styles';
 
+import { LOGIN } from 'constants/screen-names';
+
 import type { PasswordHeaderComponent } from './password-header.types';
 import styles from './styles';
 
 const iconSize = moderateScale(30);
 
-const PasswordHeader: PasswordHeaderComponent = ({ navigation }) => {
+const PasswordHeader: PasswordHeaderComponent = ({ navigation, route }) => {
   const routeName = service.getActiveRouteName(
     navigation.getState(),
   ) as keyof typeof PASSWORD_HEADER_STEPS;
@@ -33,15 +35,18 @@ const PasswordHeader: PasswordHeaderComponent = ({ navigation }) => {
           {step.title}
         </Typography>
       </View>
-
-      <View style={styles.right}>
-        <Typography variant="body2" mode="medium" style={styles.step}>
-          {`0${step.stepNo}/`}
-        </Typography>
-        <Typography variant="body2" mode="medium" style={styles.totalSteps}>
-          03
-        </Typography>
-      </View>
+      {route.params &&
+      'from' in route.params &&
+      route.params?.from === LOGIN ? null : (
+        <View style={styles.right}>
+          <Typography variant="body2" mode="medium" style={styles.step}>
+            {`0${step.stepNo}/`}
+          </Typography>
+          <Typography variant="body2" mode="medium" style={styles.totalSteps}>
+            03
+          </Typography>
+        </View>
+      )}
     </View>
   );
 };

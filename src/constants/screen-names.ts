@@ -12,3 +12,4 @@ export const SIGNUP = 'Signup';
 export const FORGOT_PASSWORD = 'ForgotPassword';
 export const RESET_PASSWORD = 'ResetPassword';
 export const RESET_PASSWORD_SUCCESS = 'ResetPasswordSuccess';
+export const EMAIL_VERIFICATION = 'EmailVerification';

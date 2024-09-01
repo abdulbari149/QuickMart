@@ -1,10 +1,10 @@
 import { Text } from 'react-native';
 import React from 'react';
 
-import type { TypogrpahyComponent } from './typography.types';
+import type { TypographyComponent } from './typography.types';
 import styles from './styles';
 
-const Typography: TypogrpahyComponent = (props) => {
+const Typography: TypographyComponent = (props) => {
   const { variant, style, children, mode = 'regular', ...rest } = props;
   const variantStyles = styles.typographyVariants[variant];
   return (

@@ -6,7 +6,11 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import Google from 'assets/svgs/google.svg';
 
 import type { PublicNavigatorParamList } from 'navigation/types';
-import { FORGOT_PASSWORD, type LOGIN } from 'constants/screen-names';
+import {
+  EMAIL_VERIFICATION,
+  FORGOT_PASSWORD,
+  LOGIN,
+} from 'constants/screen-names';
 import assets from 'assets';
 
 import Typography from 'components/Typography';
@@ -93,6 +97,9 @@ const Login: LoginScreen = ({ navigation }) => {
           variant="contained"
           title="Login"
           style={{ button: styles.signupButton }}
+          onPress={() => {
+            navigation.navigate(EMAIL_VERIFICATION, { from: LOGIN });
+          }}
         />
       </View>
       <Button

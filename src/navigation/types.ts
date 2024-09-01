@@ -25,6 +25,7 @@ import type {
   SIGNUP,
   SPLASH,
   WELCOME,
+  EMAIL_VERIFICATION,
 } from 'constants/screen-names';
 
 export type ScreensParamsList = {
@@ -38,6 +39,9 @@ export type ScreensParamsList = {
   [FORGOT_PASSWORD]: undefined;
   [RESET_PASSWORD]: undefined;
   [RESET_PASSWORD_SUCCESS]: undefined;
+  [EMAIL_VERIFICATION]: {
+    from: typeof LOGIN | typeof FORGOT_PASSWORD;
+  };
 };
 
 export type PublicScreens =
@@ -48,7 +52,8 @@ export type PublicScreens =
   | typeof SIGNUP
   | typeof FORGOT_PASSWORD
   | typeof RESET_PASSWORD
-  | typeof RESET_PASSWORD_SUCCESS;
+  | typeof RESET_PASSWORD_SUCCESS
+  | typeof EMAIL_VERIFICATION;
 
 export type PublicNavigatorParamList = Pick<ScreensParamsList, PublicScreens>;
 

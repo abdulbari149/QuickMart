@@ -3,6 +3,7 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import {
+  EMAIL_VERIFICATION,
   FORGOT_PASSWORD,
   LOGIN,
   ONBOARDING,
@@ -26,6 +27,7 @@ import {
   Welcome,
 } from 'screens';
 import { PasswordHeader } from 'components/Header';
+import EmailVerification from 'screens/EmailVerification';
 
 const Stack = createNativeStackNavigator<PublicNavigatorParamList>();
 
@@ -41,6 +43,7 @@ const PublicNavigator = () => (
     <Stack.Screen name={WELCOME} component={Welcome} key={WELCOME} />
     <Stack.Screen name={SIGNUP} component={Signup} key={SIGNUP} />
     <Stack.Screen name={LOGIN} component={Login} key={LOGIN} />
+    
     <Stack.Group
       screenOptions={{
         header: PasswordHeader,
@@ -51,6 +54,11 @@ const PublicNavigator = () => (
         name={FORGOT_PASSWORD}
         component={ForgotPassword}
         key={FORGOT_PASSWORD}
+      />
+      <Stack.Screen
+        name={EMAIL_VERIFICATION}
+        component={EmailVerification}
+        key={EMAIL_VERIFICATION}
       />
       <Stack.Screen
         name={RESET_PASSWORD}
