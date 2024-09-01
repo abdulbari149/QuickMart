@@ -20,8 +20,10 @@ import { moderateScale } from 'utils/styles';
 
 import PasswordInput from 'components/PasswordInput';
 
-import styles from './styles';
 import useGoogleSignin from 'hooks/use-google-signin';
+import toast from 'utils/toast';
+
+import styles from './styles';
 
 export type SignupProps = NativeStackScreenProps<
   PublicNavigatorParamList,
@@ -40,14 +42,14 @@ const Signup: SignupScreen = ({ navigation }) => {
 
   const google = useGoogleSignin();
 
-
   const handleGoogleSignin = async () => {
     try {
-      
+      const { user } = await google.signin();
+      toast.success(`Successful signup ${user.name}`);
     } catch (error) {
-      
+      toast.error(error);
     }
-  }
+  };
 
   return (
     <KeyboardAwareScrollView

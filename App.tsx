@@ -23,7 +23,9 @@ import Navigation from 'navigation';
 
 import useGoogleSignin from 'hooks/use-google-signin';
 
-import store from './src/store/index';
+import Toast from 'components/Toast';
+
+import store from 'store';
 
 const App = (): JSX.Element => {
   const { selectedLocale } = useCurrentLocale();
@@ -48,6 +50,7 @@ const App = (): JSX.Element => {
           >
             <LocalesProvider defaultLocale="en" locale={selectedLocale}>
               <Navigation />
+              <Toast />
             </LocalesProvider>
           </View>
         </Provider>

@@ -20,6 +20,8 @@ import Button from 'components/Button';
 import CodeInput from 'components/CodeInput';
 import { moderateScale } from 'utils/styles';
 
+import toast from 'utils/toast';
+
 import styles from './styles';
 
 export type EmailVerificationProps = NativeStackScreenProps<
@@ -57,7 +59,13 @@ const EmailVerification: EmailVerificationScreen = ({ navigation }) => {
       </View>
       <View style={styles.formContainer}>
         <CodeInput onChange={handleChange('code')} />
-        <TouchableWithoutFeedback onPress={() => {}}>
+        <TouchableWithoutFeedback
+          onPress={() => {
+            toast.success(
+              '6-digit Verification code has been send to your email address.',
+            );
+          }}
+        >
           <Typography variant="body2" mode="medium" style={styles.resend}>
             Resend Code
           </Typography>

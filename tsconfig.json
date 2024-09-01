@@ -18,8 +18,7 @@
     "baseUrl": ".",
     "paths": {
       "*": ["src/*", "*"],
-      "storybook/*": ["./storybook/*"],
-      "icons/*": ["./src/assets/images/*", "./src/assets/icons/*.svg"]
+      "storybook/*": ["./storybook/*"]
     },
     "typeRoots": [
       "./node_modules/@types",
